@@ -1,0 +1,36 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid my-bank-head">
+    <div class='row' id="my-banks-head">
+        <p>
+        <h1 id="my-banks">Edit My Account</h1>
+        </p>
+    </div>
+</div>
+<div class="container-fluid" id="user-form-c">
+<form id="user-form" action="{% url 'edit_user' %}" enctype="multipart/form-data" method="post" class="create-form">
+    {% csrf_token %}
+    <img src="{{request.user.profile_pic.url}}">
+    {{form.as_p}}
+    <input class="btn btn-primary" type="submit" value="Save">
+</form>
+</div>
+{% endblock %}
+

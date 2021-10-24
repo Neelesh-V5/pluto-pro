@@ -1,0 +1,43 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-7" id="ticket-view">
+            <h1>Ticket #{{ticket.id}}</h1>
+            <p>Requested by: {{ticket.requested_by}}</p>
+            <p>Requested on: {{ticket.requested_on}}</p>
+            <p>Pickup date: {{ticket.pickup_date}}</p>
+            <p>Pickup time: {{ticket.pickup_time}}</p>
+            <p>No. of packages requested: {{ticket.requested_packages}}</p>
+            {% if ticket.completed %}
+            <h3 class="alert-success">COMPLETED!</h3>
+            {% else %}
+            <h3 class="alert-danger">PENDING</h3>
+            {% endif %}
+        </div>
+        <div class="col-xs-12 col-md-7" id="ticket-user">
+            <h2>Contact deatils of {{ticket.requested_by.username}}</h2>
+            <img height="128px" width="128px"src={{ticket.requested_by.profile_pic.url}} alt="{{ticket.requested_by.username}}'s profile picture">
+            <p>Name: {{ticket.requested_by.first_name|title}} {{ticket.requested_by.last_name|title}}</p>
+            <p>Email: <a href="mailto:{{ticket.requested_by.email}}">{{ticket.requested_by.email}}</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class='container-fluid'>
+    <div class="row" id='about-head'>
+        <h1>About Us</h1>
+        <p>Snaga Pack’s mission is to take on food insecurity, by making food banks more accessible. Our innovative
+            “ticket system” approach makes it possible for food banks and community members to organize efficient food
+            pick ups, taking another step to a hunger-free future.</p>
+    </div>
+    <div class="card bg-dark text-white volunteer-image-bg row" id="about-head-img">
+        <img src="{% static 'media/about-vol.png' %}" class="card-img " alt="volunteer-image">
+        <div class="card-img-overlay">
+            <h1 class="card-title head-apt">Our Values</h1>
+        </div>
+    </div>
+    <div class="row" id='about-mid'>
+        <div class="col-xs-12 col-md-4 about-mid-d">
+            
+            <img src="{% static 'media/availability.png' %}">
+            <h2>Availability</h2>
+            <p>We strive to connect people with food banks that have their resources in stock. We prioritize
+                availability for everyone; no one should have to go hungry.</p>
+        </div>
+        <div class="col-xs-12 col-md-4 about-mid-d">
+            
+            <img src="{% static 'media/access.png' %}">
+            <h2>Access</h2>
+            <p>Making food banks known and accessible is what we do best. Finding food near you has never been easier!
+            </p>
+        </div>
+        <div class="col-xs-12 col-md-4 about-mid-d">
+            
+            <img src="{% static 'media/quality.png' %}">
+            <h2>Quality</h2>
+            <p>The quality of your food is just as important as quanity! Connecting yourself to a wide range of food
+                banks is a great way to adopt a diverse, healthy diet!</p>
+        </div>
+    </div>
+    <div class="row" id="about-bottom">
+        <p>10% of the world goes hungry every day.
+            Let’s make a difference.</p>
+    </div>
+</div>
+{% endblock %}

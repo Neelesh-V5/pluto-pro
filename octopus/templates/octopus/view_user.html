@@ -1,0 +1,43 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid my-bank-head">
+    <div class='row' id="my-banks-head">
+        <p>
+        <h1 id="my-banks">My Account</h1>
+        </p>
+    </div>
+<!-- </div>
+<div class="container-fuild"> -->
+    <div class="row">
+        <div class="col-xs-12 col-md-6" id="account-l">
+            <img src="{{request.user.profile_pic.url}}" alt="{{request.user.username}}'s profile picture">
+            <div>
+                <button class="btn"><a href="{% url 'edit_user' %}">Edit</a></button>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6" id="account-r">
+            <h1>{{request.user.username}}</h1>
+            <p>Name: {{request.user.first_name|title}} {{request.user.last_name|title}}</p>
+            <p>Email: {{request.user.email}}</p>
+            <!-- <p>{{request.user.first_name}}</p> -->
+        </div>
+    </div>
+</div>
+{% endblock %}

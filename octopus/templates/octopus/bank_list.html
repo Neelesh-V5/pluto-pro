@@ -1,0 +1,70 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+<!-- {% block user %}
+{% if user.is_authenticated %}
+<span class>Welcome {{user}}!</span>
+{% endif %}
+{% endblock %} -->
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="card bg-dark text-white volunteer-image-bg">
+    <img src="{% static 'media/volunteer.png' %}" class="card-img " alt="volunteer-image">
+    <div class="card-img-overlay">
+        <h3 class="card-title">Helping you reach your goals one click at a time</h3>
+        <p class="card-text">
+            Picking up your food should never be a hassle. Lucky for you, we can simplify the process of getting your
+            food from your local food bank.
+        </p>
+    </div>
+</div>
+<div id="banks-list">
+{% for bank in banks %}
+<a href="{% url 'bank' bank.id %}">
+<div class="card mb-3 bank-card">
+    <div class="row g-0">
+        <div class="col-md-8  bank-card-body">
+            <div class="card-body">
+                <h3 class="card-title">{{bank.name|title}}</h3>
+                <!-- <p class="card-text">
+              {{bank.about}}
+          </p> -->
+                {% if bank.edited_on %}
+                <p class="card-text">
+                <ul class="bank-card-list">
+                    <li><p class="card-text">{{bank.building_number_name}} {{bank.building_street}}, {{bank.building_city}},
+                        {{bank.building_state}} {{bank.building_pincode}} </p></li>
+                    <li>Pickup: {{bank.opening_time}} - {{bank.closing_time}} </li>
+                    <li>Phone number: {{bank.phone_number}}</li>
+                    <li><a href= "mailto:{{bank.email}}" style="color: white;text-decoration: none;">Email: {{bank.email}}</a></li>
+                </ul>
+                <small> Last edited on {{bank.edited_on}}</small>
+                </p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-4 bank-card-img">
+            <a href="{% url 'bank' bank.id %}">
+            <img src="{{bank.logo.url}}" class="img-fluid" alt="{{bank.name}}"></a>
+        </div>
+    </div>
+</div>
+</a>
+{% endfor %}
+
+</div>
+{% endblock %}

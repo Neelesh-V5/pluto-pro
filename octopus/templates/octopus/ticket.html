@@ -1,0 +1,51 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fuild ticket-head-c">
+        <div class="row" style="margin-left: 0px;margin-right: 0px;">
+            <img src="{% static 'media/ticket-vol.jpg' %}" id="t-vol"
+            class="col-xs-12 col-md-6" alt="ticket-volunteer-image" style="padding:0px;">
+             <div class="col-xs-12 col-md-6 ticket-head">
+                 <p><h1 style="font-size: 250% ;">Create your ticket</h1>
+                 <p>To pick up your food, please fill out this ticket form</p>
+                 </p>
+             </div>
+        </div>
+    </div>
+    
+    <div class="ticket-create container">
+        <h4>{{bank.name|title}}</h4>
+        <h4>Create your ticket here</h4>
+        <div id="timings"><b>Timings</b>: From </div>
+        <div class="days"> Open on 
+            {% for day in days %} 
+            {{day.day.day}} ,
+            {% endfor %}
+        </div>
+        <form class="ticket-form" action="{% url 'create_ticket' bank.id %}" enctype="multipart/form-data" method="post" class="create-form">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn-primary" type="submit" value="Create">
+        </form>
+    </div>
+{% endblock %}
+<!-- 
+@media only screen and (min-width:1024px){
+
+} -->

@@ -1,0 +1,46 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="card my-bank">
+    <div class="row g-0">
+        <div class="col-md-12 col-lg-4 bank-img-l">
+            <a href="#">
+                <img src="{{bank.logo.url}}" class="img-fluid rounded-start" alt="{{bank.name}}"></a>
+        </div>
+        <div class="col-md-12 col-lg-8 ">
+            <a href="#">
+            <div class="card-body my-bank">
+                <h1 class="card-title">{{bank.name|title}}</h1>
+                <p class="card-text">{{bank.building_number_name}} {{bank.building_street}}, {{bank.building_city}},
+                    {{bank.building_state}} {{bank.building_pincode}} </p>
+                <p class="card-text">Pickup: {{bank.opening_time}} - {{bank.closing_time}}</p>
+                <p class="card-text">Phone number: {{bank.phone_number}}</p>
+                <p class="card-text"><a href="mailto:{{bank.email}}">{{bank.email}}</a></p>
+                <p class="card-text"><small class="text-muted">Last updated on {{bank.edited_on}}</small></p>
+                </a>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1>About {{bank.name|title}}</h1>
+    <p>{{bank.about}}</p>
+    <div id="create-req"><a href="{% url 'create_ticket' bank.id %}">Create a request</a></div>
+</div>
+{% endblock %}

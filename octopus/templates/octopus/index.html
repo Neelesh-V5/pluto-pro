@@ -1,0 +1,61 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+<!-- {% block user %}
+{% if user.is_authenticated %}
+<span class>Welcome {{user}}!</span>
+{% endif %}
+{% endblock %} -->
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fuild">
+    <div id="index-head" class="row" style="margin-left: 0px;margin-right: 0px;">
+        <div id="index-head-body" class="col-xs-12 col-md-6">
+            <p id="index-head-1">A managment system that benefits the community</p>
+            <p id="index-head-2">Intoducing Snaga Pack, a new method of handling food donations.</p>
+        </div>
+        <div class="col-xs-12 col-md-1"> </div>
+        <img src="{% static 'media/index-header.jpg' %}" class="col-xs-12 col-md-5"
+            alt="smiling-volunteers-image" style="padding:0px;" id="index-vol">
+    </div>
+    <div class="row" id="im-a">
+        <h1>I am a</h1>
+    </div>
+    <div class="row" id="index-sign">
+        <div id="food-bank-l" class="col-xs-12 col-md-6">
+            <h3>Food Bank</h3>
+            <p>Horray! Welcome to the team, so glad that you’re choosing Snag A Pack! Signing up is as simple as 1-2-3.
+            </p>
+            <p class="index-sign-bt">
+                <button type="button" class="btn "><a href="{% url 'register' %}">Sign Up</a></button>
+            </p>
+        </div>
+        <div id="community-member-r" class="col-xs-12 col-md-6">
+            <h3>Community Member</h3>
+            <p>Picking up your food package has never been easier! To get started, click below to find out if your local
+                food bank is using Snag A Pack.</p>
+            <p class="index-sign-bt">
+                <button type="button" class="btn"><a href="{% url 'bank_list_view' %}">See Food Banks</a></button>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

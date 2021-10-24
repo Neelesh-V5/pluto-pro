@@ -1,0 +1,62 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid my-bank-head">
+    <div class='row' id="my-banks-head">
+        <p>
+        <h1 id="my-banks">My Foodbank</h1>
+        </p>
+    </div>
+</div>
+<div class="card my-bank">
+    <div class="row g-0">
+        <div class="col-md-12 col-lg-4 bank-img-l">
+            <a href="{% url 'my_foodbank_view' bank.id %}">
+                <img src="{{bank.logo.url}}" class="img-fluid rounded-start" alt="{{bank.name}}"></a>
+        </div>
+        <div class="col-md-12 col-lg-8 ">
+                <div class="card-body my-bank">
+                    <h1 class="card-title">{{bank.name|title}}</h1>
+                    <p class="card-text">{{bank.building_number_name}} {{bank.building_street}}, {{bank.building_city}},
+                        {{bank.building_state}} {{bank.building_pincode}} </p>
+                    <p class="card-text">Pickup: {{bank.opening_time}} - {{bank.closing_time}}</p>
+                    <p class="card-text">Phone number: {{bank.phone_number}}</p>
+                    <p class="card-text"><a href="mailto:{{bank.email}}">{{bank.email}}</a></p>
+                    <p class="card-text"><small class="text-muted">Last updated on {{bank.edited_on}}</small></p>
+        </div>
+    </div>
+    <div class="row px-0" id="packages-bank">
+        <div class="col-xs-12 col-md-1"></div>
+        
+        <div class="col-xs-12 col-md-5" id="packages-num-c">
+            <h1 id="packages-num">{{total}}</h1>
+        </div>
+        <div class="col-xs-12 col-md-6" id="packages-r">
+            <h1>Total food packages</h1>
+            <p id="completed">
+            <span>{{completed}}</span><span>Completed</span>
+            </p>
+            <p>
+            <p id="pending"><span>{{pending}}</span><span>Pending</span>
+            </p>
+            <button class="btn" id="tickets-bt"><a href="{% url 'tickets_view' bank.id %}">View Tickets</a></button>
+        </div>
+    </div>
+</div>
+{% endblock %}

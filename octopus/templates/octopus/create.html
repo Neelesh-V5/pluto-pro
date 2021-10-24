@@ -1,0 +1,20 @@
+{% extends "octopus/layout.html" %}
+
+{% block body %}
+<div class="container-fluid my-bank-head">
+    <div class='row' id="my-banks-head">
+        <p>
+        <h1 id="my-banks">Create Foodbank</h1>
+        </p>
+    </div>
+</div>
+<div>
+    <form id="user-form" action="{% url 'create' %}" enctype="multipart/form-data" method="post" class="create-form">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        {{day_form.as_p}}
+        <input class="btn btn-primary" type="submit" value="Create">
+    </form>
+</div>
+{% endblock %}

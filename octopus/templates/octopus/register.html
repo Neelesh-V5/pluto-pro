@@ -1,0 +1,73 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+{% block title %}Octopus - Register{% endblock %}
+
+{% block link %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid sign-up-container">
+    <img src="{% static 'media/sign-up.png' %}" alt="sign-up-image" id="sign-up-img">
+    <h2 class="sign-in-head">Sign Up</h2>
+    <div class="sign-up-form-container">
+        <form action="{% url 'register' %}" method="post" id="register">
+            {% csrf_token %}
+            <div class="sign-in-form">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input class="form-control" autofocus type="text" name="username" placeholder="Username"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input class="form-control" autofocus type="text" name="first_name" placeholder="First Name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input class="form-control" autofocus type="text" name="last_name" placeholder="Last Name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="birthdate">Birthdate</label>
+                            <input class="form-control" type="date" name="birthdate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmation">Confirmation</label>
+                            <input class="form-control" type="password" name="confirmation"
+                                placeholder="Confirm Password" required>
+                        </div>
+                        <div class="form-group">
+                            <input id="check1" class="" type="checkbox" name="representative" required>
+                            <label for="representative">I am representing a food bank.</label>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <input class="btn btn-light sign-bt" type="submit" value="Sign Up">
+        </form>
+        {% if message %}
+        <div class="alert alert-danger error" role="alert">{{ message }}</div>
+        {% endif %}
+    </div>
+    <p>Already have an account? <a href="{% url 'login' %}">Log In here.</a></p>
+</div>
+
+{% endblock %}

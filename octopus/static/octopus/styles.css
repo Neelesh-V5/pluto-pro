@@ -1,0 +1,750 @@
+
+.form-group{
+    padding:16px;
+}
+
+select{
+    padding:0px 16px;
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+.navbar a{
+    color:white;
+}
+.navbar a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar button{
+    background:white;
+}
+
+
+.volunteer-image-bg .card-img-overlay{
+    text-align: center;
+}
+
+
+.bank-card-body{
+    background: #4CB963;
+    color:white;
+    text-align: center;
+}
+
+.bank-card img{
+    height: 407px;
+    width: 626px;
+}
+.bank-card-img{
+    background: #4CB963;
+    margin-left: 0;
+}
+
+.navbar{
+    padding-left: 48px;
+    background: #157F1F;
+    color:white;
+}
+
+.bank-card{
+    background: #4CB963;
+    border-collapse: separate; 
+    border-radius: 4px;
+    max-width: 1680px;
+}
+
+.bank-card h3{
+    text-align: center;
+}
+
+.bank-card-list{
+    list-style: none;
+}
+
+.bank-card-list li{
+    padding: 16px ;
+    font-size: 18px;
+}
+
+#banks-list > div{
+    border-radius: 24%;
+}
+
+#banks-list{
+    margin:64px ;
+}
+
+.ticket-form{
+    padding:32px;
+    text-align: center;
+}
+
+.ticket-form input , .ticket-form select{
+    max-width: fit-content;
+}
+
+.ticket-form textarea{
+    max-width: 500px;
+}
+
+.ticket-create{
+    border:solid 1px black;
+    margin: 24px 24px;
+    padding: 32px 16px;
+    text-align: center;
+}
+
+.days{
+    text-align: center;
+}
+
+#timings, .days{
+    font-size: larger;
+}
+
+.ticket-form  { padding: 16px; margin:16px 16px; }
+.ticket-form  p     { display: table-row; }
+.ticket-form label { display: table-cell; font-weight: bold;}
+.ticket-form input { padding: 16px; margin:44px;  } 
+.ticket-form select {display: table-cell;}
+
+@media only screen and (max-width:472px){
+    .bank-card-list li{
+        padding: 0px ;
+        font-size: 18px;
+        text-align: left;
+    }
+    .bank-card-list{
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width:900px) and (min-width:800px){
+    .ticket-head{
+        padding:2%;
+    }
+}
+
+@media only screen and (max-width:800px){
+    #account-r{
+        text-align: center;
+        margin: auto;
+    }
+}
+
+.ticket-head{
+    text-align: center;
+    padding:0% 4% 0% 0%;
+    font-size: 150% ;
+    background:rgba(21, 127, 31, 0.8); 
+    color:white;
+}
+
+.ticket-head  p{
+    vertical-align: middle;
+    margin:64px 0px;
+}
+
+#about-head{
+    text-align: center;
+    padding:64px;
+    color: #157F1F;
+
+}
+
+#about-head h1{
+    font-family: 'Spinnaker';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 80px;
+    letter-spacing: -0.015em;
+}
+
+#about-head p{
+    margin: 24px;
+    font-family: "Fira Sans";
+    font-style: normal;
+    font-weight: normal;
+    font-size:30px;
+    color:#46A34F;
+}
+
+#about-head-img > div > h1{
+    font-size: 80px;
+}
+
+#about-head-img > div{
+    vertical-align: middle;
+}
+
+#about-mid{
+    background: #44994C;
+}
+
+#about-mid{
+    padding:16px;
+    text-align: center;
+    margin-bottom:32px;
+}
+
+#about-mid > div:nth-child(1) > h2{
+    color:white;
+    margin-top: 32px;
+    font-family: 'Fira Sans', sans-serif;
+}
+#about-mid > div:nth-child(2) > h2{
+    color:white;
+    margin-top: 32px;
+    font-family: 'Fira Sans', sans-serif;
+}
+#about-mid > div:nth-child(3) > h2{
+    color:white;
+    margin-top: 32px;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+#about-mid > div:nth-child(1) > p{
+    color: #1A2F38CC;
+    font-family: 'Oxygen';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.015em;
+    text-align: center;
+}
+#about-mid > div:nth-child(2) > p{
+    color: #1A2F38CC;
+    font-family: 'Oxygen';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.015em;
+    text-align: center;
+}
+#about-mid > div:nth-child(3) > p{
+    color: #1A2F38CC;
+    font-family: 'Oxygen';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.015em;
+    text-align: center;
+}
+
+#about-bottom{
+    margin: 128px initial;
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 50px;
+    text-align: center;
+    color: #46A34F;
+    margin: 128px 64px;
+}
+
+#banks-list a{
+    color: white;
+    text-decoration: none;
+}
+
+#index-head{
+    color: #157F1F;
+}
+
+#index-head-body{
+    padding: 48px 0px 16px 3%;
+}
+
+#index-head-1{
+    font-size: 54px;
+    line-height: 70px;
+    letter-spacing: -0.015em;
+}
+
+#index-head-2{
+    font-family: 'Fira Sans';
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -0.015em;
+    color: #46A34F;
+}
+
+#index-vol{
+    max-height:577px ;
+}
+
+#im-a{
+    text-align: center;
+    background:  rgba(21, 127, 31, 0.8);
+    color: white;
+    padding: 16px;
+}
+
+#food-bank-l > p, #community-member-r > p{
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+}
+#food-bank-l, #community-member-r{
+    background:  #4CB963;
+    padding: 16px;
+}
+
+#food-bank-l > h3,#community-member-r > h3{
+    color:#1A2F38;
+    text-align: center;
+    font-size: 30px;
+    margin: 16px;
+}
+
+#food-bank-l > p.index-sign-bt > button > a,#community-member-r > p.index-sign-bt > button > a{
+    color: white;
+    background: #157F1F;
+    text-decoration: none;
+    padding: 8px 40px;
+    
+}
+
+#index-sign-bt{
+    text-align: center;
+    border-radius: 15px; 
+}
+
+#about-mid > div:nth-child(1),#about-mid > div:nth-child(2),#about-mid > div:nth-child(3){
+    margin-top: 64px;
+    padding: 32px;
+}
+
+.sign-up-container{
+    background: url("/static/media/sign-bg.jpg");
+    color:white;
+    text-align: center;
+    padding: 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color:rgba(1, 115, 35, 0.75);
+    background-blend-mode: soft-light;
+}
+
+.login-container{
+    background: url("/static/media/sign-bg.jpg");
+    color:white;
+    text-align: center;
+    padding: 10%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color:rgba(1, 115, 35, 0.75);
+    background-blend-mode: soft-light;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.sign-in-head{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 100px;
+}
+
+.sign-in-form{
+    background: #93C198;
+    border-radius: 50px;
+    text-align: center;
+    max-width: 800px;
+    margin:16px auto 24px;
+}
+
+body > div > div > div > form > div > div:nth-child(1) > input,body > div > div > div > form > div > div:nth-child(2) > input,#register > div > div > div:nth-child(1) > div:nth-child(1) > input,#register > div > div > div:nth-child(1) > div:nth-child(2) > input,#register > div > div > div:nth-child(1) > div:nth-child(3) > input,#register > div > div > div:nth-child(1) > div:nth-child(4) > input,#register > div > div > div:nth-child(2) > div:nth-child(1) > input,#register > div > div > div:nth-child(2) > div:nth-child(2) > input,#register > div > div > div:nth-child(2) > div:nth-child(3) > input{
+    width: 358px;
+    height: 38px;
+    margin:20px auto;
+    background: #CDF0D1;
+    border-radius: 30px;
+}
+
+.sign-in-form-container{
+    margin: 48px auto;
+}
+
+#register > input.btn.btn-light.sign-bt,.sign-in-form-container > form > input.btn.btn-light.sign-bt{
+    width: 202px;
+    height: 54px;
+    color:rgba(21, 127, 31, 1);
+    font-size: 22px;
+    line-height: 25px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+    font-weight:600 ;
+}
+
+.sign-in-form label{
+    font-family: 'Oxygen';
+    font-size: 24px;
+    color: rgba(26, 47, 56, 0.8);
+}
+
+.login-container > p > a,.login-container > p  {
+    color: white;
+    font-size: 115%;
+    font-weight:bold ;
+}
+
+.sign-in-form-container > div.error{
+    max-width: 500px;
+    margin:48px auto;
+    text-align: center;
+}
+
+#register > div > div{
+    padding: 16px;
+}
+
+#my-banks{
+    font-size: 80px;
+}
+#my-banks-head{
+    font-family: 'Spinnaker';
+    color:white;
+    background: rgba(1, 115, 35, 0.8);
+    text-align: center;
+    padding: 64px 24px; 
+    line-height: 30px;
+}
+body > div > div.container-fluid.my-bank-list{
+    margin: 64px 0px;
+}
+
+body > div > div.container-fluid.my-bank-list > div > div > div.col-md-12 > div.my-bank{
+    text-align: center;
+}
+
+#index-head{
+    background: white;
+}
+body > div > div.card.my-bank > div > div.col-md-12 > div > a > h1,body > div > div.container-fluid.my-bank-list > div > div > div.col-md-12 > div > a > h1{
+    color:#157F1F;
+    font-family: 'Spinnaker';
+}
+
+body > div > div.container-fluid.my-bank-list > div > div > div.col-md-12 > div > a > p{
+    color: black;
+
+}
+
+body > div > div.container-fluid.my-bank-list > div > div > div.col-md-12 > div > a{
+    text-decoration: none;
+}
+.bank-img-l{
+    text-align: center;
+}
+
+.bank-img-l img{
+    margin:64px 0px;
+    max-width: 100%;
+}
+
+.my-bank{
+    margin: 64px;
+    color:black;
+    text-align: center;
+}
+body > div > div.card.my-bank > div > div.col-md-12 > div > a{
+    color: black;
+    text-decoration: none;
+}
+
+#packages-num{
+    font-size: 200px;
+    text-align: center;
+    color: white;
+    width: 265px;
+    height: 256px;
+    background-color:  #4CB963;
+    vertical-align: middle;
+    margin: 25px auto ;
+    border-radius: 100%;
+}
+#packages-num-c{
+    text-align: center;
+    /* margin: auto; */
+    padding:0px;
+    float: right;
+    max-width: 500px;
+}
+
+#packages-r {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5%;
+}
+#completed, #pending{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+#completed span,#pending span {
+    margin:10px;
+}
+
+#completed > span:nth-child(1), #pending > span:nth-child(1){
+    text-align: left;
+   
+}
+
+#pending > span:nth-child(1){
+    color: white;
+    background-color: rgba(65, 85, 93, 0.93);
+    padding:16px 24px;
+    margin: auto;
+    border-radius: 100%;
+}
+
+#packages-bank{
+    /* border: 5px solid #157F1F; */
+    box-sizing: border-box;
+    border-radius: 50px;
+    padding:0px;
+    text-align: center;
+    float: right;   
+}
+
+
+#ticket-bg{
+    background: url("/static/media/volunteer2.jpg");
+    text-align: center;
+    padding: 10%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height:  308px;
+    z-index: 0;
+    background-color:rgba(1, 115, 35, 0.75);
+    background-blend-mode: soft-light;
+}
+#ticket-table-c{
+    padding:16px;
+}
+#ticket-table{
+    text-align: center;
+    margin: 64px auto;
+    max-width: 1240px;
+}
+
+#ticket-mid{
+    background:#3C5964;
+    color: white;
+    padding: 36px;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 36px;
+}
+
+
+#ticket-table > thead > tr:nth-child(1){
+    border: none;
+}
+/* #ticket-table > tbody >td{
+    margin:54px;
+    padding: 48px;
+} */
+
+#ticket-table tr{
+    border:1px solid black;
+    padding:24px;
+}
+
+#user-form{
+    text-align: center;
+    margin: 24px;
+}
+
+#user-form .form-control{
+    max-width:720px;
+    margin: auto;
+}
+
+#user-form-c{
+    margin: auto;
+}
+
+#account-l{
+    text-align: center;
+    padding: 32px;
+}
+#account-l img{
+    margin-bottom: 72px;
+    vertical-align: middle;
+}
+#account-l button a{
+    color: white;
+    text-decoration: none;
+    width: 247px;
+    height: 66px;
+    font-size: 22px;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: bold;
+    background: #157F1F;
+    border-radius: 6px;
+    padding: 24px;
+}
+#account-r h1{
+    font-size: 175%;
+    margin-bottom: 32px;
+}
+#account-r{
+    font-family: 'Fira Sans';
+    padding: 32px;
+    font-size: 200%;
+    text-align: left;
+    line-height: 30px;
+}
+
+#user-form > input.btn.btn-primary{
+    width: 247px;
+    height: 66px;
+    font-size: 22px;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: bold;
+    background: #157F1F;
+    border-radius: 6px;
+    padding: 14px;
+}
+
+#user-form input[type=time]{
+    max-width: fit-content;
+}
+
+#tickets-bt{
+    background: rgba(60, 89, 100, 0.7);
+    border-radius: 6px;
+    color: white;
+    margin: 48px;
+}
+
+#tickets-bt a{
+    color: white;
+    text-decoration: none;
+}
+#ticket-view h1{
+    text-decoration:underline rgb(12, 4, 117);
+}
+#ticket-view{
+    margin: 85px auto 100px;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+    padding: 14px;
+    font-size: 125%;
+    border: 6px solid rgb(12, 4, 117);
+    border-radius: 5%;
+    background:rgb(203, 237, 248);
+}
+
+#ticket-user{
+    text-align: center;
+    background:rgba(238, 196, 79, 0.199);
+    padding:24px 48px;
+    margin:auto;
+    border-radius: 5%;
+}
+
+#ticket-table > tbody  a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color:black;
+    text-decoration: none;
+}
+
+#ticket-table > tbody  a:hover{
+    opacity: 0.75;
+}
+
+#ticket-table > tbody > tr{
+    padding: 0px;
+}
+
+.item{
+    margin:0px auto;
+}
+
+
+.footer-dark {
+    padding:50px 0;
+    color:#f0f9ff;
+    background-color:#282d32;
+  }
+  
+  .footer-dark h1{
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+  }
+  
+  .footer-dark ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:0;
+  }
+  
+  .footer-dark ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.6;
+  }
+  
+  .footer-dark ul a:hover {
+    opacity:0.8;
+  }
+  
+
+  .footer-dark .item.text {
+    margin-bottom:36px;
+  }
+  
+  
+  .footer-dark .item.text p {
+    opacity:0.6;
+    margin-bottom:0;
+  }
+  #create-req {
+      text-align:center;
+      
+      margin:24px;
+  }
+#create-req > a{
+    background:#157F1F;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 200%;
+    margin:auto;
+    padding: 16px;
+    border-radius: 16px;
+}

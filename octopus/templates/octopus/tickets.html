@@ -1,0 +1,56 @@
+{% extends "octopus/layout.html" %}
+{% load static %}
+
+{% block link %}
+{% if user.is_authenticated %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+</li>
+{% else %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}">Login</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container-fuild" id="ticket-bg">
+    </div>
+    <div class="row" id="ticket-mid">
+        <h3>View each ticket by clicking on the name below</h3>
+    </div>
+    <div class="container-fluid">
+        <div class="row" id="ticket-table-c">
+            <table class="table" id="ticket-table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Packages Requested</th>
+                    <th>Pickup Date</th>
+                    <th>Pickup Time</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for ticket in tickets %}
+                <tr class="dy-tr">
+                    <td><a href="{% url 'view_ticket' bank.id ticket.id%}">Ticket #{{ticket.id}}</td>
+                    <td><a href="{% url 'view_ticket' bank.id ticket.id%}">{{ticket.requested_packages}}</a></td>
+                    <td><a href="{% url 'view_ticket' bank.id ticket.id%}">{{ticket.pickup_date}}</a></td>
+                    <td><a href="{% url 'view_ticket' bank.id ticket.id%}">{{ticket.pickup_time}}</a></td>
+                    <td><a href="{% url 'view_ticket' bank.id ticket.id%}">{% if ticket.completed %}Completed{% else %}Pending{% endif %}</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+{% endblock %}
+<!-- 
+@media only screen and (min-width:1024px){
+
+} -->
