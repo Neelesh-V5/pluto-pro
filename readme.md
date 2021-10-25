@@ -31,6 +31,8 @@ Along our hackathon journey though, we also learned more about the food insecuri
 We would love to expand Snaga Pack's ticket feature to cater to users who may have special or restricted diets. For example, we could implement additional filters for food banks with vegan or gluten-free options.<hr />
 
 Check out our presentation:   [Snaga Pack Demo](https://www.youtube.com/watch?v=mi5nkuJ2PD4)
+
+Our DevPost Submission: [Snaga Pack](https://devpost.com/software/snaga-pack)
   
 <hr />
   
